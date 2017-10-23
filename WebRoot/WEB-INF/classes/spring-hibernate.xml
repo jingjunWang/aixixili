@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context" 
+  xmlns:tx="http://www.springframework.org/schema/tx"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+">
+	<!-- 引入属性文件 -->
+	<context:property-placeholder location="classpath:config.properties" />
+	<!-- 自动扫描(自动注入) -->
+	<context:component-scan base-package="invoice.*.*.dao"/>
+	<context:component-scan base-package="invoice.*.*.service"/>
+	
+	<!-- 配置数据源 -->
+  	<bean id="dataSourceIncoice"  
+  		class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+  		<property name="driverClassName" value="${jdbc_driverClassName}" />  
+  		<property name="url" value="${jdbc_url}" /> 
+  		<property name="username" value="${jdbc_username}" /> 
+  		<property name="password" value="${jdbc_password}" /> 
+  	</bean> 
+	<!-- 配置bo数据源 -->
+	<bean id="dataSourceBo" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc_bo_driverClassName}" />
+		<property name="url" value="${jdbc_bo_url}" />
+		<property name="username" value="${jdbc_bo_username}" />
+		<property name="password" value="${jdbc_bo_password}" />
+	</bean>
+	<!--  配置hibernate SessionFactory-->
+ 	 <bean id="sessionFactoryinvoice" 
+ 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+ 		<property name="dataSource" ref="dataSourceIncoice" /> 
+ 		<property name="hibernateProperties"> 
+ 			<props> 
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+ 				<prop key="hibernate.hbm2ddl.auto">update</prop> 
+ 				<prop key="hibernate.show_sql">false</prop> 
+ 				<prop key="hiberante.format_sql">false</prop> 
+ 				<prop key="current_session_context_class">thread</prop>   
+ 				<!-- 配置二级缓存 ，启用二级缓存 -->
+		<!-- 		<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				指定使用哪种二级缓存 org.hibernate.cache.EhCacheRegionFactory
+				<prop name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+				 -->
+ 			</props> 
+ 		</property> 
+          <property name="packagesToScan"> <list> <value>invoice.*.weixin.entity</value> </list>    
+             </property>   
+ 	</bean>  
+		<!-- 配置hibernate SessionFactory -->
+	<bean id="sessionFactorybo"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceBo" />
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hiberante.format_sql">false</prop>
+				<prop key="current_session_context_class">thread</prop>
+				<!-- 配置二级缓存 ，启用二级缓存 -->
+				<!-- <prop key="hibernate.cache.use_second_level_cache">true</prop> -->
+				<!-- <prop key="hibernate.cache.use_query_cache">true</prop> -->
+				<!-- 指定使用哪种二级缓存 org.hibernate.cache.EhCacheRegionFactory -->
+				<!-- <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.EhCacheRegionFactory</prop> -->
+				<!-- <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop> -->
+				<!-- 加载缓存所需配置文件 -->  
+                	<!-- 	<prop key="hibernate.net.sf.ehcache.configurationResourceName">classpath:ehcache.xml</prop>   -->
+			</props>
+		</property>
+				<!-- 注解方式配置 -->
+		<property name="packagesToScan">
+			<list>
+				<value>invoice.*.isposbo.entity</value>
+			</list>
+		</property>
+
+		<!-- hbm方式配置 -->
+		<!-- <property name="mappingDirectoryLocations"> <list> <value>classpath:com/xmls/</value> 
+			<value>classpath: com/xml/*.hbm.xml</value> </list> </property> -->
+	</bean>
+		<!-- 动态SessionFactory -->
+	<bean id="sessionFactory" class="invoice.iceason.core.DynamicSessionFactoryImpl">
+		<property name="defaultTargetSessionFactory" ref="sessionFactoryinvoice" />
+		<property name="targetSessionFactorys">
+			<map>
+				<entry value-ref="sessionFactoryinvoice" key="sessionFactoryinvoice" />
+				<entry value-ref="sessionFactorybo" key="sessionFactorybo" />
+			</map>
+		</property>
+	</bean>
+    <!-- 事务管理器 -->
+ 	<bean id="transactionManager" 
+ 		class="org.springframework.orm.hibernate4.HibernateTransactionManager"> 
+ 		<property name="sessionFactory" ref="sessionFactory"></property> 
+ 		
+ 	</bean> 
+    <bean id="dataSourceInterceptor" class="invoice.iceason.core.DataSourceInterceptor" />
+    
+	<!-- 拦截器方式配置事物 -->
+ 	<tx:advice id="transactionAdvice" transaction-manager="transactionManager"> 
+ 		<tx:attributes> 
+ 			<tx:method name="add*" propagation="REQUIRED" /> 
+ 			<tx:method name="append*" propagation="REQUIRED" /> 
+ 			<tx:method name="insert*" propagation="REQUIRED" /> 
+ 			<tx:method name="save*" propagation="REQUIRED" /> 
+ 			<tx:method name="update*" propagation="REQUIRED" /> 
+ 			<tx:method name="modify*" propagation="REQUIRED" /> 
+ 			<tx:method name="edit*" propagation="REQUIRED" /> 
+ 			<tx:method name="delete*" propagation="REQUIRED" /> 
+ 			<tx:method name="get*Effect" propagation="REQUIRED" /> 
+ 			<tx:method name="remove*" propagation="REQUIRED" /> 
+ 			<tx:method name="repair" propagation="REQUIRED" /> 
+ 			<tx:method name="delAndRepair" propagation="REQUIRED" /> 
+ 			<tx:method name="copy*" propagation="REQUIRED" /> 
+ 			<tx:method name="createTable" propagation="REQUIRED" /> 
+				  <!--hibernate4必须配置为开启事务 否则 getCurrentSession()获取不到 read-only表示为只读-->  
+ 	        <tx:method name="get*" propagation="REQUIRED" read-only="true" />   
+ 	        <tx:method name="is*" propagation="REQUIRED" read-only="true" />  
+ 	        <tx:method name="count*" propagation="REQUIRED" read-only="true" />   
+ 	        <tx:method name="find*" propagation="REQUIRED" read-only="true" />   
+ 	        <tx:method name="list*" propagation="REQUIRED" read-only="true" />   
+ 	        <tx:method name="*" read-only="true" />   
+ 		</tx:attributes> 
+ 	</tx:advice> 
+ 		<aop:config> 
+ 		<aop:pointcut id="transactionPointcut" expression="execution(* invoice.*.*.service.*.*(..))" /> 
+ 		<aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" /> 
+ 	</aop:config> 
+
+		<!-- 配置druid监控spring jdbc -->
+	<bean id="druid-stat-interceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+	</bean>
+	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
+		<property name="patterns">
+			<list>
+				<value>invoice.*.service.*</value>
+			</list>
+		</property>
+	</bean>
+</beans>  

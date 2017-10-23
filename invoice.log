@@ -1,0 +1,61 @@
+ERROR @2017-09-11 11:05:05,980 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40016 errmsg:invalid button size hint: [GLJj_0108vr19]
+INFO  @2017-09-11 11:05:06,008 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40016
+INFO  @2017-09-11 11:05:32,004 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 11:06:59,332 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 11:08:09,585 | main | Iceason_Invoice | -- 菜单创建成功！
+ERROR @2017-09-11 11:08:48,535 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40016 errmsg:invalid button size hint: [1wj7Aa0331vr19]
+INFO  @2017-09-11 11:08:48,571 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40016
+ERROR @2017-09-11 11:10:04,039 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40016 errmsg:invalid button size hint: [DMmcja0376vr25]
+INFO  @2017-09-11 11:10:04,100 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40016
+ERROR @2017-09-11 11:17:20,005 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40026 errmsg:invalid sub button key size hint: [.IxKGa0422vr20]
+INFO  @2017-09-11 11:17:20,057 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40026
+ERROR @2017-09-11 11:23:46,155 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40026 errmsg:invalid sub button key size hint: [Bxouta0957vr25]
+INFO  @2017-09-11 11:23:46,200 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40026
+ERROR @2017-09-11 11:24:00,286 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [8IQdxa0243vr56!]
+ERROR @2017-09-11 11:24:00,352 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [TTNXRa0243vr50!]
+ERROR @2017-09-11 11:24:21,540 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40027 errmsg:invalid sub button url size hint: [9b_9xa0247vr21]
+INFO  @2017-09-11 11:24:21,584 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40027
+ERROR @2017-09-11 11:25:54,040 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [GfRBJa0356vr54!]
+ERROR @2017-09-11 11:25:54,103 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [Bmk9Ea0356vr55!]
+ERROR @2017-09-11 11:28:01,102 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40027 errmsg:invalid sub button url size hint: [i0hzwA0483vr26]
+INFO  @2017-09-11 11:28:01,136 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40027
+ERROR @2017-09-11 11:31:40,303 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [ZBoG5a0703vr44!]
+ERROR @2017-09-11 11:31:40,392 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [9MacIa0703vr45!]
+ERROR @2017-09-11 11:33:42,760 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40027 errmsg:invalid sub button url size hint: [5rOU3a0710vr19]
+INFO  @2017-09-11 11:33:42,845 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40027
+ERROR @2017-09-11 11:33:54,459 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [ZeABTA0837vr29!]
+ERROR @2017-09-11 11:33:54,540 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [jIx5bA0837vr52!]
+ERROR @2017-09-11 11:33:54,750 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40027 errmsg:invalid sub button url size hint: [XHnzBA0837vr19]
+INFO  @2017-09-11 11:33:54,776 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40027
+ERROR @2017-09-11 11:34:18,710 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [7sh27a0861vr31!]
+ERROR @2017-09-11 11:34:18,788 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [a3R7va0861vr46!]
+ERROR @2017-09-11 11:34:45,302 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40027 errmsg:invalid sub button url size hint: [0cSrFA0866vr19]
+INFO  @2017-09-11 11:34:45,340 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40027
+ERROR @2017-09-11 11:35:38,140 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [Ty_McA0940vr47!]
+ERROR @2017-09-11 11:35:38,222 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [IWjZWa0941vr66!]
+INFO  @2017-09-11 11:37:27,076 | main | Iceason_Invoice | -- 菜单创建成功！
+ERROR @2017-09-11 11:37:40,325 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [0063vr50!]
+ERROR @2017-09-11 11:37:40,398 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [96S1qa0063vr45!]
+ERROR @2017-09-11 11:39:00,398 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40027 errmsg:invalid sub button url size hint: [r4j0FA0068vr23]
+INFO  @2017-09-11 11:39:00,441 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40027
+ERROR @2017-09-11 11:40:31,860 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [RxCyva0234vr64!]
+ERROR @2017-09-11 11:40:31,944 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 获取失败用户 errcode:40001 errmsg:invalid credential, access_token is invalid or not latest hint: [awh7LA0234vr58!]
+ERROR @2017-09-11 11:42:59,941 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40027 errmsg:invalid sub button url size hint: [Btkjqa0239vr19]
+INFO  @2017-09-11 11:42:59,981 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40027
+INFO  @2017-09-11 11:46:29,823 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 12:03:47,089 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 12:09:58,440 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 12:11:36,823 | main | Iceason_Invoice | -- 菜单创建成功！
+ERROR @2017-09-11 12:53:09,727 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40026 errmsg:invalid sub button key size hint: [Is7DwA0592vr22]
+INFO  @2017-09-11 12:53:09,762 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40026
+ERROR @2017-09-11 13:23:58,814 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40026 errmsg:invalid sub button key size hint: [J_CPma0441vr25]
+INFO  @2017-09-11 13:23:58,856 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40026
+ERROR @2017-09-11 13:25:25,689 | main | invoice.iceason.weixin.weixin.WeixinUtil | -- 创建菜单失败 errcode:40026 errmsg:invalid sub button key size hint: [hMq7Fa0528vr23]
+INFO  @2017-09-11 13:25:25,728 | main | Iceason_Invoice | -- 菜单创建失败，错误码：40026
+INFO  @2017-09-11 13:30:38,312 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 13:36:10,340 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 13:36:52,736 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 13:37:12,523 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 13:38:23,314 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 13:39:35,900 | main | Iceason_Invoice | -- 菜单创建成功！
+INFO  @2017-09-11 13:40:53,610 | main | Iceason_Invoice | -- 菜单创建成功！
